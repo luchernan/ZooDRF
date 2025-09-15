@@ -10,7 +10,7 @@
 
 - **Colección de Postman:** Incluida en el repositorio del proyecto.
 - **Ubicación del archivo:** Carpeta docs/.
-- **Nombre del archivo:** fandit_zoo_api.json.
+- **Nombre del archivo:** FanditZoo.postman_collection.json.
 - **Base de Datos:** Usuario y contraseña del panel /admin de Django en correo electrónico enviado.
 - **Detalles:** Migraciones y Fixtures ya aplicadas.
   
@@ -57,7 +57,7 @@
       ```
 
       ```bash
-          venv\\Scripts\\activate
+          venv\Scripts\activate
       ```
 
 5.  **Instalar Dependencias:**
