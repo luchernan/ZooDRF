@@ -74,6 +74,8 @@ WSGI_APPLICATION = 'ZooAPI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+### La Base de Datos está alojada en Render.com, es un plan gratuito y expira el 12 de octubre de 2025 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

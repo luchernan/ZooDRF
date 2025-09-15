@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "9fe5ce1c-93e3-4eaf-a9db-b4dbf3c43a61",
+		"name": "Fandit Zoo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48456667",
+		"_collection_link": "https://marieds1996-6080027.postman.co/workspace/Marie-Smith's-Workspace~36a994d1-8c28-44d5-8d76-2fe4d1a8571c/collection/48456667-9fe5ce1c-93e3-4eaf-a9db-b4dbf3c43a61?action=share&source=collection_link&creator=48456667"
+	},
+	"item": [
+		{
+			"name": "Familias",
+			"item": [
+				{
+					"name": "Crear Familia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **POST: Crear una Familia**\n\n- **Descripción:** Este método crea una nueva familia de animales en la base de datos. Debes enviar el nombre de la familia en el cuerpo de la solicitud en formato JSON.\n    \n- **Método:** `POST`\n    \n- Cuerpo (body -> raw, json)\n    \n- Input:\n    \n- JSON{ \"nombre\": \"Mamíferos\"}\n    \n- Output\n    \n- JSON{ \"id\": 1, \"nombre\": \"Mamíferos\"}"
+					},
+					"response": []
+				},
+				{
+					"name": "Todas Familias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **GET: Listar todas las Familias**\n\n- **Descripción:** Recupera una lista completa de todas las familias de animales registradas en la API.\n    \n- **Método:** `GET`\n    \n- Output:\n    \n- JSON\\[ { \"id\": 1, \"nombre\": \"Mamíferos\" }, { \"id\": 2, \"nombre\": \"Aves\" }\\]\n    \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Familia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **5\\. DELETE: Eliminar una Familia**\n\n- **Descripción:** Elimina una familia de la base de datos de manera permanente. No se devuelve ningún cuerpo en la respuesta.\n    \n- **Método:** `DELETE`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- **Respuesta (204 No Content):** (Sin contenido)"
+					},
+					"response": []
+				},
+				{
+					"name": "Detalle Familia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **GET: Obtener una Familia Específica**\n\n- **Descripción:** Permite obtener los detalles de una familia específica utilizando su identificador único (`id`).\n    \n- **Método:** `GET`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- JSON{ \"id\": 1, \"nombre\": \"Mamíferos\"}"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Familia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "PUT: Actualizar una FamiliaEndFragment\n\n- **Descripción:** Actualiza **completamente** los datos de una familia existente. Es crucial enviar el cuerpo completo de la solicitud; si omites un campo, este se considerará `null`.\n    \n- **Método:** `PUT`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- Input\n    \n- JSON{ \"nombre\": \"Mamíferos Marinos\"}\n    \n- Output\n    \n- JSON{ \"id\": 1, \"nombre\": \"Mamíferos Marinos\"}\n    \n\nEndFragment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Especies",
+			"item": [
+				{
+					"name": "Crear especie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **POST: Crear una Especie**\n\n- **Descripción:** Crea una nueva especie, asociándola a una familia existente a través de su `id`.\n    \n- **Método:** `POST`\n    \n- Input\n    \n- JSON{ \"nombre_vulgar\": \"Tigre\", \"nombre_cientifico\": \"Panthera tigris\", \"en_peligro\": true, \"familia_id\": 1 }\n    \n- Output\n    \n- JSON{ \"id\": 1, \"nombre_vulgar\": \"Tigre\", \"nombre_cientifico\": \"Panthera tigris\", \"en_peligro\": true, \"familia\": { \"id\": 1, \"nombre\": \"Mamíferos\" }}"
+					},
+					"response": []
+				},
+				{
+					"name": "Todas especies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **GET: Listar todas las Especies**\n\n- **Descripción:** Obtiene una lista completa de todas las especies, mostrando los detalles de su familia.\n    \n- **Método:** `GET`\n    \n- Output\n    \n- JSON\\[ { \"id\": 1, \"nombre_vulgar\": \"Tigre\", \"nombre_cientifico\": \"Panthera tigris\", \"en_peligro\": true, \"familia\": { \"id\": 1, \"nombre\": \"Mamíferos\" } }\\]"
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Especie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **DELETE: Eliminar una Especie**\n\n- **Descripción:** Elimina una especie de la base de datos de forma permanente. No hay cuerpo en la respuesta.\n    \n- **Método:** `DELETE`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- **Respuesta (204 No Content):** (Sin contenido)"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Especie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **PUT: Actualizar una Especie**\n\n- **Descripción:** Actualiza **todos** los campos de una especie. Se deben incluir todos los campos en el cuerpo de la solicitud, incluyendo la `familia_id`.\n    \n- **Método:** `PUT`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- Input\n    \n- JSON{ \"nombre_vulgar\": \"Tigre de Bengala\", \"nombre_cientifico\": \"Panthera tigris\", \"en_peligro\": false, \"familia_id\": 1}\n    \n- Output\n    \n- JSON{ \"id\": 1, \"nombre_vulgar\": \"Tigre de Bengala\", \"nombre_cientifico\": \"Panthera tigris\", \"en_peligro\": false, \"familia\": { \"id\": 1, \"nombre\": \"Mamíferos\" }}"
+					},
+					"response": []
+				},
+				{
+					"name": "Detalle Especie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **GET: Obtener una Especie Específica**\n\n- **Descripción:** Recupera los detalles de una especie en particular usando su `id`.\n    \n- **Método:** `GET`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- Output\n    \n- JSON{ \"id\": 1, \"nombre_vulgar\": \"Tigre\", \"nombre_cientifico\": \"Panthera tigris\", \"en_peligro\": true, \"familia\": { \"id\": 1, \"nombre\": \"Mamíferos\" }}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Zoológicos",
+			"item": [
+				{
+					"name": "Crear Zoo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **POST: Crear un Zoológico**\n\n- **Descripción:** Crea un nuevo zoológico. Puedes asociarle especies enviando una lista de sus nombres científicos en el campo `animales_cientificos`.\n    \n- **Método:** `POST`\n    \n- Input\n    \n- JSONStartFragment{ \"nombre\": \"Zoo de la Ciudad\", \"ciudad\": \"Barcelona\", \"pais\": \"España\", \"tamano_m2\": 50000, \"presupuesto_anual\": 1500000.50, \"animales_cientificos\": \\[ \"Panthera tigris tigris\", \"Canis lupus\" \\]}EndFragment\n    \n- Output\n    \n- JSON{ \"id\": 1, \"nombre\": \"Zoo Central\", \"ciudad\": \"Ciudad de México\", \"pais\": \"México\", \"tamano_m2\": 150000, \"presupuesto_anual\": 5000000, \"animales_cientificos\": \\[\\], \"animales\": \\[ { \"id\": 1, \"nombre_vulgar\": \"Tigre de Bengala\", \"nombre_cientifico\": \"Panthera tigris\", \"familia\": { \"id\": 1, \"nombre\": \"Mamíferos\" }, \"familia_id\": 1, \"en_peligro\": true } \\]}\n    \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Todos Zoos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **GET: Listar todos los Zoológicos**\n\n- **Descripción:** Recupera una lista de zoológicos. La respuesta incluye la cantidad total de animales y un listado de sus nombres agrupados por familia.\n    \n- **Método:** `GET`\n    \n- Output\n    \n- JSON\\[ { \"id\": 1, \"nombre\": \"Zoo Central\", \"ciudad\": \"Ciudad de México\", \"pais\": \"México\", \"tamano_m2\": 150000, \"presupuesto_anual\": 5000000, \"cantidad_animales\": 2, \"animales_por_familia\": { \"Mamíferos\": \\[ \"Tigre de Bengala\", \"Panda Gigante\" \\] } }\\]"
+					},
+					"response": []
+				},
+				{
+					"name": "Detalle Zoo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "**GET: Obtener un Zoológico Específico**\n\n- **Descripción:** Obtiene los detalles de un zoológico específico. La respuesta incluye la cantidad de animales y su agrupación por familia.\n    \n- **Método:** `GET`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- Output\n    \n- JSON{ \"id\": 1, \"nombre\": \"Zoo Central\", \"ciudad\": \"Ciudad de México\", \"pais\": \"México\", \"tamano_m2\": 150000, \"presupuesto_anual\": 5000000, \"cantidad_animales\": 2, \"animales_por_familia\": { \"Mamíferos\": \\[ \"Tigre de Bengala\", \"Panda Gigante\" \\] }}"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Zoo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **PUT: Actualizar un Zoológico**\n\n- **Descripción:** Actualiza **completamente** un zoológico. Debes incluir todos los campos en el cuerpo de la solicitud, incluso si no los modificas.\n    \n- **Método:** `PUT`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- Input\n    \n- JSON{ \"nombre\": \"Zoo del Bosque\", \"ciudad\": \"Bogotá\", \"pais\": \"Colombia\", \"tamano_m2\": 180000, \"presupuesto_anual\": 6000000.00, \"animales_cientificos\": \\[\"Ailuropoda melanoleuca\"\\]}\n    \n- Output\n    \n- JSON{ \"id\": 1, \"nombre\": \"Zoo del Bosque\", \"ciudad\": \"Bogotá\", \"pais\": \"Colombia\", \"tamano_m2\": 180000, \"presupuesto_anual\": 6000000, \"animales_cientificos\": \\[\\], \"animales\": \\[ { \"id\": 2, \"nombre_vulgar\": \"Panda Gigante\", \"nombre_cientifico\": \"Ailuropoda melanoleuca\", \"familia\": { \"id\": 1, \"nombre\": \"Mamíferos\" }, \"familia_id\": 1, \"en_peligro\": true } \\]}"
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Zoo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### **DELETE: Eliminar un Zoológico**\n\n- **Descripción:** Elimina un zoológico de la base de datos de manera irreversible.\n    \n- **Método:** `DELETE`\n    \n- **Parámetros de URL:** `id` (entero)\n    \n- **Respuesta (204 No Content):** (Sin contenido)"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
