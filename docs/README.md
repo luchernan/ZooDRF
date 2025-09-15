@@ -11,8 +11,8 @@
 - **Colección de Postman:** Incluida en el repositorio del proyecto.
 - **Ubicación del archivo:** Carpeta docs/.
 - **Nombre del archivo:** fandit_zoo_api.json.
-- **Base de Datos** Usuario y contraseña del panel /admin de Django en correo electrónico enviado.
-- **Detalles** Migraciones y Fixtures ya aplicadas.
+- **Base de Datos:** Usuario y contraseña del panel /admin de Django en correo electrónico enviado.
+- **Detalles:** Migraciones y Fixtures ya aplicadas.
   
 
 ## **Puesta en Marcha (Paso a Paso)**
