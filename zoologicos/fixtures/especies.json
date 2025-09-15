@@ -1,0 +1,33 @@
+
+[
+  {
+    "model": "zoologicos.familia",
+    "pk": 1,
+    "fields": { "nombre": "Felinos" }
+  },
+  {
+    "model": "zoologicos.familia",
+    "pk": 2,
+    "fields": { "nombre": "Caninos" }
+  },
+  {
+    "model": "zoologicos.especie",
+    "pk": 1,
+    "fields": {
+      "nombre_vulgar": "Tigre de Bengala",
+      "nombre_cientifico": "Panthera tigris tigris",
+      "familia": 1,
+      "en_peligro": true
+    }
+  },
+  {
+    "model": "zoologicos.especie",
+    "pk": 2,
+    "fields": {
+      "nombre_vulgar": "Lobo gris",
+      "nombre_cientifico": "Canis lupus",
+      "familia": 2,
+      "en_peligro": false
+    }
+  }
+]
